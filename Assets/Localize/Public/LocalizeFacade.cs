@@ -16,6 +16,16 @@ public class LocalizeFacade
         }
         return localizeManager.GetText ((int) id);
     }
+    public static string GetText (string idStr)
+    {
+        try {
+            EnumLocalizeName textId = (EnumLocalizeName) Enum.Parse (typeof (EnumLocalizeName), idStr, true);
+            return GetText (textId);
+        } catch (ArgumentException e) {
+            return "eror: no id";
+        }
+    }
+
     public static void ChangeSetting (EnumLaungageSetting settingLanguage)
     {
         if (localizeManager == null) {

@@ -36,5 +36,16 @@
 
             AssetDatabase.Refresh ();
         }
+        [MenuItem ("Assets/Change JP Setting")]
+        public static void ChangeJpSetting ()
+        {
+            LocalizeFacade.ChangeSetting (EnumLaungageSetting.JP);
+        }
+
+        [MenuItem ("Assets/Change EN Setting")]
+        public static void ChangeEnSetting ()
+        {
+            LocalizeFacade.ChangeSetting (EnumLaungageSetting.EN);
+        }
     }
 }
