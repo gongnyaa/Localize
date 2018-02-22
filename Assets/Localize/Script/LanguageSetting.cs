@@ -8,11 +8,12 @@ namespace Localize
     /// 1 is JP
     /// 2 is EN
     /// </summary>
-    public class LanguageSetting
+    public class LanguageSetting : ILanguageSetting
     {
         private EnumLaungageSetting enumLaungageSetting;
         public const string PREFS_KEY = "LocalizeSetting";
         public const int NO_SETTING_LANGUAGE = 0;
+
         public LanguageSetting ()
         {
             int settingLanguageInt = PlayerPrefs.GetInt (PREFS_KEY, NO_SETTING_LANGUAGE);

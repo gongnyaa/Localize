@@ -2,7 +2,7 @@
 
 namespace Localize
 {
-    public class LanguageSettingStub : LanguageSetting
+    public class LanguageSettingStub : ILanguageSetting
     {
         private EnumLaungageSetting enumLaungageSetting;
 
@@ -16,7 +16,7 @@ namespace Localize
             return enumLaungageSetting;
         }
 
-        internal void ChangeLanguage (EnumLaungageSetting laungageSetting)
+        public void ChangeLanguage (EnumLaungageSetting laungageSetting)
         {
             this.enumLaungageSetting = laungageSetting;
         }

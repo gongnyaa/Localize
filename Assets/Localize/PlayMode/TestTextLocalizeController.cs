@@ -15,10 +15,9 @@ public class TestTextLocalizeController
         LocalizeFacade.ChangeSetting (EnumLaungageSetting.JP);
         GameObject inst = GameObject.Instantiate (prefab);
         Text text = inst.GetComponent<Text> ();
-        inst.GetComponent<TextMeshLocalizeController> ().ChangeTextName ("ID_1");
+        inst.GetComponent<TextLocalizeController> ().ChangeTextName ("ID_1");
 
         Assert.AreEqual (text.text, "ID 1 JP");
-
         LocalizeFacade.ChangeSetting (EnumLaungageSetting.EN);
         Assert.AreEqual (text.text, "ID 1 EN");
 

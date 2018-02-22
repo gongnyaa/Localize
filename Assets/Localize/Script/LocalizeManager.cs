@@ -8,13 +8,13 @@
 
     public class LocalizeManager
     {
-        private LanguageSetting setting;
+        private ILanguageSetting setting;
         //private EnumLaungageSetting nowSetting;
         private Dictionary<int, string> dic;
         private static HashSet<ILocalizeObserver> observerList = new HashSet<ILocalizeObserver> ();
 
 
-        public LocalizeManager (LanguageSetting settingStub)
+        public LocalizeManager (ILanguageSetting settingStub)
         {
             this.setting = settingStub;
             dic = LocalizeCSVParser.GetTextDictionary (setting.GetLanguage ());
