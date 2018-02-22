@@ -7,29 +7,29 @@ using UnityEditor;
 using Localize;
 
 [ExecuteInEditMode]
-[RequireComponent (typeof (Text))]
-public class TextLocalizeController : MonoBehaviour, ILocalizeObserver
+[RequireComponent (typeof (TextMesh))]
+public class TextMeshLocalizeController : MonoBehaviour, ILocalizeObserver
 {
     [SerializeField]
     private string textName;
-    private Text textCache;
+    private TextMesh textMeshCache;
     public void ChangeTextName (string textName)
     {
         this.textName = textName;
         ShowText ();
     }
-    private Text GetText ()
-    {
-        if (textCache == null) {
-            textCache = GetComponent<Text> ();
-        }
-        return textCache;
-    }
 
     void Awake ()
     {
-
         ShowText ();
+    }
+
+    private TextMesh GetText ()
+    {
+        if (textMeshCache == null) {
+            textMeshCache = GetComponent<TextMesh> ();
+        }
+        return textMeshCache;
     }
 
     void OnEnable ()
